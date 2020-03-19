@@ -1,0 +1,174 @@
+Notes: 
+
+Things I need to do for this CLI_Project:
+    1. Must be atleast two levels deep. 
+    2. Must use a scrapper or an API 
+    3. Get the information from the API and send save it into objects. 
+  
+  Steps on how to achieve this: 
+  1. Pick an API (National Geographic News API)
+  2. Make sure were able to obtain all the information we need from said API to build our app.
+  3. Start thinking about the flow of your project. 
+  
+  #project flow: 
+  1. I want to welcome the user to Natgeo. 
+  2. Ask the user which category of news to chose from. 
+  3. Bring up the latest stories of the day from that chosen category.
+  4. Have the user be able to exand and read the story. 
+  5. Click back out to main menu or category menu.  
+  6. #If this is to complicated will just stick to top headlines and user can select which story to expand. 
+    
+
+  Natgeo API 
+  {
+"id": "national-geographic",
+"name": "National Geographic",
+"description": "Reporting our world daily: original nature and science news from National Geographic.",
+"url": "http://news.nationalgeographic.com",
+"category": "science",
+"language": "en",
+"country": "us"
+},
+
+
+
+// 20200317231124
+// http://newsapi.org/v2/top-headlines?sources=national-geographic&apiKey=0e3b22862264449ea652702249a5229b
+
+{
+  "status": "ok",
+  "totalResults": 10,
+  "articles": [
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Liz Langley",
+      "title": "Tardigrade",
+      "description": "",
+      "url": "https://www.nationalgeographic.com/animals/invertebrates/t/tardigrades-water-bears.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/animals/pictures/invertebrates/t/tardigrade/og-image-tardigrades-sciencesource_ss2437867.jpg",
+      "publishedAt": "2020-03-17T23:22:21.7129342Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Eve Conant",
+      "title": "Here's what a massive coronavirus lockdown would look like in the U.S.",
+      "description": "China and Italy have enacted sweeping restrictions to stem the new coronavirus. This is how those efforts would map onto the States.",
+      "url": "https://www.nationalgeographic.com/history/2020/03/60-million-person-coronavirus-lockdown-united-states.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/archaeologyandhistory/rights-exempt/OG/coronavirus-lockdown-og.jpg",
+      "publishedAt": "2020-03-17T23:22:21.3325715Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Noah Charney",
+      "title": "How Slovenia’s monsters came back from the dead",
+      "description": "An ancient tradition was almost lost to history. Then the locals stepped in.",
+      "url": "https://www.nationalgeographic.com/travel/destinations/europe/slovenia/experience-shrovetide-like-never-before-western-slovenia.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/travel/2020-digital/Shrovetide-Slovenia/stock_mm9288_200215_05903.jpg",
+      "publishedAt": "2020-03-17T23:22:20.8000586Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Nina Strochlic",
+      "title": "A 40,000-mile journey was nothing for this 19th-century female explorer",
+      "description": "Harriet Chalmers Adams traversed Latin America on horseback, retraced Columbus’ route, and was the only female journalist allowed on the French frontlines of WWI.",
+      "url": "https://www.nationalgeographic.com/history/2020/03/40000-mile-journey-was-nothing-for-19th-century-female-explorer.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/archaeologyandhistory/rights-exempt/OG/harriet-promo.jpg",
+      "publishedAt": "2020-03-17T23:22:20.0213109Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Rachel Buchholz",
+      "title": "Coronavirus family survival guide",
+      "description": "Though kids might be thinking of the school closures as a three-week-long snow day with endless playdates, parents are wondering whether that’s such a good idea. We've got tips and suggestions for making the most of the time spent away from school.",
+      "url": "https://www.nationalgeographic.com/family/in-the-news/coronavirus/coronavirus-family-survival-guide.html",
+      "urlToImage": "https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Family/coronavirus/mom-two-kids.jpg",
+      "publishedAt": "2020-03-17T23:22:17.8752522Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Amy McKeever",
+      "title": "Coronavirus is spreading panic. Here's why.",
+      "description": "From prehistoric predator encounters to frantic toilet paper runs, our anxious brains can short-circuit when faced with the scary unknown.",
+      "url": "https://www.nationalgeographic.com/history/reference/modern-history/why-we-evolved-to-feel-panic-anxiety.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/science/2020/03/17/panic/og_panic_gettyimages-1212202060.jpg",
+      "publishedAt": "2020-03-17T23:22:16.9053229Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Nina Strochlic",
+      "title": "Typhoid Mary's tragic tale exposed the health impacts of 'super-spreaders'",
+      "description": "Tracking down the culprit behind an outbreak of typhoid fever in 1900s New York was a breakthrough in how symptom-free carriers can spread sickness.",
+      "url": "https://www.nationalgeographic.com/history/2020/03/typhoid-mary-tragic-tale-exposed-health-impacts-super-spreaders.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/archaeologyandhistory/rights-exempt/OG/typhoid-mary-promo.jpg",
+      "publishedAt": "2020-03-17T23:22:14.4069267Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "David Beard",
+      "title": "Here are some handshake alternatives, as suggested by our readers ",
+      "description": "Nat Geo readers worldwide are suggesting new greetings amid COVID-19.",
+      "url": "https://www.nationalgeographic.com/history/2020/03/handshake-alternatives-suggested-by-readers.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/ngdotcom/newsletters/History/2020/03/23/nl-gettyimages-464967684.jpg",
+      "publishedAt": "2020-03-17T23:22:11.9535737Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Christine Dell'Amore",
+      "title": "How to deal with your kid “colleagues” during coronavirus shutdowns",
+      "description": "Are your children stuck at home during coronavirus shutdowns? Here’s how to deal with your new \"colleagues.\"",
+      "url": "https://www.nationalgeographic.com/family/in-the-news/coronavirus/coronavirus-pandemic-kids-home.html",
+      "urlToImage": "https://kids.nationalgeographic.com/content/dam/kids/photos/articles/Family/coronavirus/crazy-kids.jpg",
+      "publishedAt": "2020-03-17T23:22:11.4340751Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "national-geographic",
+        "name": "National Geographic"
+      },
+      "author": "Amy McKeever",
+      "title": "What is the coronavirus?",
+      "description": "COVID-19, the disease caused by the novel coronavirus, has infected tens of thousands of people worldwide. Here’s what you need to know.",
+      "url": "https://www.nationalgeographic.com/science/health-and-human-body/human-diseases/coronavirus.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/science/2020/03/13/corona_explainer/og_corona_gettyimages-1206570416.jpg",
+      "publishedAt": "2020-03-17T23:22:10.7233939Z",
+      "content": null
+    }
+  ]
+}
+  
